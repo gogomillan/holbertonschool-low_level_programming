@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - Entry point
@@ -7,7 +8,7 @@
  */
 int main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\"");
-	fprintf(stderr, " - Dora Korpar, 2015-10-19\n");
+	write(2, "and that piece of art is useful\"", 32);
+	write(2, " - Dora Korpar, 2015-10-19\n", 27);
 	return (1);
 }
