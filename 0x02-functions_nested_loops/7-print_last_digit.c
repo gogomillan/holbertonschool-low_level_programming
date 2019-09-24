@@ -1,5 +1,5 @@
-#include "holberton.h"
 #include <stdlib.h>
+#include "holberton.h"
 
 /**
  * print_last_digit - This function prints the last digit of argument
