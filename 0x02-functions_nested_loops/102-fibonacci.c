@@ -9,12 +9,12 @@ int main(void)
 {
 	unsigned long i, a, b, t;
 
-	a = 0;
-	b = 1;
-	for (i = 1; i <= 50; i++)
+	a = 1;
+	b = 2;
+	printf("1");
+	for (i = 1; i < 50; i++)
 	{
-		printf("%s", i == 1 ? "" : ", ");
-		printf("%ld", b);
+		printf(", %ld", b);
 		t = a;
 		a = b;
 		b = t + b;
