@@ -9,6 +9,7 @@
 void print_number(int n)
 {
 	char h = '-';
+	char o = '0';
 	int  i = n;
 
 	if ((n / 10) == 0)
@@ -18,12 +19,12 @@ void print_number(int n)
 			_putchar(h);
 			i *= -1;
 		}
-		_putchar('0' + i);
+		_putchar(o + i);
 		return;
 	}
 
 	print_number(n / 10);
 	if (n < 0)
 		i *= -1;
-	_putchar('0' + (i % 10));
+	_putchar(o + (i % 10));
 }
