@@ -19,12 +19,14 @@ void print_number(int n)
 			_putchar(h);
 			i *= -1;
 		}
-		_putchar(o + i);
+		o = o + i;
+		_putchar(o);
 		return;
 	}
 
 	print_number(n / 10);
 	if (n < 0)
 		i *= -1;
-	_putchar(o + (i % 10));
+	o = o + (i % 10);
+	_putchar(o);
 }
