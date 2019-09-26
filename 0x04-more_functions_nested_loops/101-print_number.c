@@ -8,8 +8,8 @@
  */
 void print_number(int n)
 {
-	char h = '-';
-	char o = '0';
+	char h = 45;
+	char o = 48;
 	int  i = n;
 
 	if ((n / 10) == 0)
