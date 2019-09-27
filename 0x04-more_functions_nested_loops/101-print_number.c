@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
  * print_number - Prints a number
@@ -12,21 +13,17 @@ void print_number(int n)
 	char o = 48;
 	int  i = n;
 
-	if (n / 10 == 0)
+
+	if (i / 10 == 0)
 	{
-		if (n < 0)
-		{
+		if (i < 0)
 			_putchar(h);
-			i *= -1;
-		}
-		_putchar(o + i);
+		_putchar(abs(i) + o);
 		return;
 	}
 
-	print_number(n / 10);
-	if (n < 0)
-		i *= -1;
+	print_number(i / 10);
 
-	o = o + (i % 10);
+	o = o + (abs(i) % 10);
 	_putchar(o);
 }
