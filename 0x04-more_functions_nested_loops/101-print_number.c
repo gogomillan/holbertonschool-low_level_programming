@@ -24,6 +24,6 @@ void print_number(int n)
 
 	print_number(i / 10);
 
-	o = o + (abs(i) % 10);
+	o = o + (abs(i % 10));
 	_putchar(o);
 }
