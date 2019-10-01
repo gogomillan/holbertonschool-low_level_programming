@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * reset_to_98 - Updates the value of the parameter to 98
