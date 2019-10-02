@@ -15,9 +15,9 @@ int _atoi(char *s)
 
 	for (i = 0; s[i] != '\0' && b; i++)
 	{
-		if (s[i] == '+')
+		if (s[i] == '+' && digit != 1)
 			sign = sign * 1;
-		else if (s[i] == '-')
+		else if (s[i] == '-' && digit != 1)
 			sign = sign * -1;
 		else if (s[i] >= '0' && s[i] <= '9' && digit == 0)
 		{
