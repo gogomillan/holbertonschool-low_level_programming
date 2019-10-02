@@ -33,8 +33,8 @@ int _atoi(char *s)
 	if (en == 0)
 		en = i - 1;
 	for (i = st; i <= en; i++)
-		r += (s[i] - 48) * _pow(10, (en - i));
-	return (r * sign);
+		r += (s[i] - 48) * _pow(10, (en - i)) * sign;
+	return (r);
 }
 
 /**

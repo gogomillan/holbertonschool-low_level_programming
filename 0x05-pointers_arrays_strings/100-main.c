@@ -30,5 +30,7 @@ int main(void)
     printf("%d\n", n);
     n = _atoi("---++++ -++ Sui - te -    2147483647 #cisfun :)");
     printf("%d\n", n);
+    n = _atoi("---++++ -++ Sui - te -    -2147483648 #cisfun :)");
+    printf("%d\n", n);
     return (0);
 }
