@@ -36,5 +36,9 @@ int main(void)
     printf("%d\n", n);
     n = _atoi("---++++ -++ Sui - te -    -40-#cisfun :)");
     printf("%d\n", n);
+    n = _atoi("Betty Holberton :)");
+    printf("%d\n", n);
+    n = _atoi("");
+    printf("%d\n", n);
     return (0);
 }
