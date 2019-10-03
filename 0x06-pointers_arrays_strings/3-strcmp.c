@@ -2,8 +2,8 @@
 
 /**
  * _strcmp - Compare a string to another
- * @dest: The destination array
- * @src: The source array
+ * @s1: The first array
+ * @s2: The second array
  *
  * Return: none
  */
