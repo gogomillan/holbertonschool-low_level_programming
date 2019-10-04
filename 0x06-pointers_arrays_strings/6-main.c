@@ -16,7 +16,7 @@ int main(void)
     printf("%s", p);
     printf("%s", s);
 
-    p = strcpy(s, "!hola?mama?\n");
+    p = strcpy(s, "h\n");
     p = cap_string(s);
     printf("%s", p);
     printf("%s", s);
