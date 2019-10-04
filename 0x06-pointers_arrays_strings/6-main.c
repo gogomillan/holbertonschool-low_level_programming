@@ -21,7 +21,12 @@ int main(void)
     printf("%s", p);
     printf("%s", s);
 
-    p = strcpy(s, "   HOLA. ama?\n");
+    p = strcpy(s, " HOLA.mama?hr{hr}hr<hr>(hr)hr,hr;hr.hr!hr?hr|hr\n");
+    p = cap_string(s);
+    printf("%s", p);
+    printf("%s", s);
+
+    p = strcpy(s, " \"aloh.mama?hr{hr}hr\n<\nhr>(hr)hr,hr;hr.hr!hr?hr|hr\n");
     p = cap_string(s);
     printf("%s", p);
     printf("%s", s);
