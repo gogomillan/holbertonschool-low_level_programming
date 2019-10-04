@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - check the code for Holberton School students.
@@ -14,5 +15,16 @@ int main(void)
     p = cap_string(s);
     printf("%s", p);
     printf("%s", s);
+
+    p = strcpy(s, "!hola?mama?\n");
+    p = cap_string(s);
+    printf("%s", p);
+    printf("%s", s);
+
+    p = strcpy(s, "   HOLA. ama?\n");
+    p = cap_string(s);
+    printf("%s", p);
+    printf("%s", s);
+
     return (0);
 }

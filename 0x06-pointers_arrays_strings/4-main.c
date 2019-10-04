@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * main - check the code for Holberton School students.
@@ -43,7 +44,7 @@ int main(void)
     reverse_array(b, sizeof(b) / sizeof(int));
     print_array(b, sizeof(b) / sizeof(int));
 
-    int c[] = {0};
+    int c[] = {0, INT_MIN, INT_MAX};
     print_array(c, sizeof(c) / sizeof(int));
     reverse_array(c, sizeof(c) / sizeof(int));
     print_array(c, sizeof(c) / sizeof(int));
