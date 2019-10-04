@@ -9,21 +9,21 @@
  */
 void print_number(int n)
 {
-    char h = 45;
-    char o = 48;
-    int  i = n;
+	char h = 45;
+	char o = 48;
+	int  i = n;
 
 
-    if (i / 10 == 0)
-    {
-        if (i < 0)
-            _putchar(h);
-        _putchar(abs(i) + o);
-        return;
-    }
+	if (i / 10 == 0)
+	{
+		if (i < 0)
+			_putchar(h);
+		_putchar(abs(i) + o);
+		return;
+	}
 
-    print_number(i / 10);
+	print_number(i / 10);
 
-    o = o + (abs(i % 10));
-    _putchar(o);
+	o = o + (abs(i % 10));
+	_putchar(o);
 }
