@@ -35,7 +35,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[k] = (a + b + c) % 10 + 48;
 		c = (a + b + c) / 10;
 		if (k >= (size_r - 2))
-			return(0);
+			return (0);
 	}
 	if (c > 0)
 		r[k++] = c + 48;
