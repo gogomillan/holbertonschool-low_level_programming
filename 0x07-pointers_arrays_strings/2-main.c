@@ -50,5 +50,13 @@ int main(void)
         printf("%s\n", f);
     }
 
+    s = "PAPA";
+    f = _strchr(s, '\0');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
+
     return (0);
 }
