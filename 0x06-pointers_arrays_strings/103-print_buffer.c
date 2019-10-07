@@ -19,7 +19,7 @@ void print_buffer(char *b, int size)
 		b_hex[0] = '\0';
 		if ((i % 10) == 0)
 		{
-			printf("%010x:", i);
+			printf("%08x:", i);
 			for (j = 0; j < 10; j++)
 			{
 				if ((j + i) >= size)
