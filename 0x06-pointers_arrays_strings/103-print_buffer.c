@@ -19,26 +19,25 @@ void print_buffer(char *b, int size)
 		b_hex[0] = '\0';
 		if ((i % 10) == 0)
 		{
-			printf ("%010x:", i);
+			printf("%010x:", i);
 			for (j = 0; j < 10; j++)
 			{
 				if ((j + i) >= size)
-					if (j % 2 == 0)	
-						sprintf (b_hex, "%s   ", b_hex);
+					if ((j % 2) == 0)
+						sprintf(b_hex, "%s   ", b_hex);
 					else
-						sprintf (b_hex, "%s  ", b_hex);
+						sprintf(b_hex, "%s  ", b_hex);
 				else
 				{
-					if (j % 2 == 0)	
-						sprintf (b_hex, "%s %02x", b_hex, b[i + j]);
+					if ((j % 2) == 0)
+						sprintf(b_hex, "%s %02x", b_hex, b[i + j]);
 					else
-						sprintf (b_hex, "%s%02x", b_hex, b[i + j]);
+						sprintf(b_hex, "%s%02x", b_hex, b[i + j]);
 					b_str[j] = b[i + j] < 32 ? '.' : b[i + j];
-					b_str[j+1] = '\0';
+					b_str[j + 1] = '\0';
 				}
 			}
-			printf ("%s %s\n", b_hex, b_str);
+			printf("%s %s\n", b_hex, b_str);
 		}
-		
 	}
 }
