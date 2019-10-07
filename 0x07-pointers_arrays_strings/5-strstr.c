@@ -26,7 +26,5 @@ int i = 0;
 		}
 	}
 
-	if (*needle == '\0')
-		return (needle);
 	return (haystack);
 }
