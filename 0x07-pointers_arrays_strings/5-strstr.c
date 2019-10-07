@@ -14,12 +14,12 @@ int i = 0;
 	for (; *haystack != '\0'; haystack++)
 		if (*haystack == *needle)
 		{
-			i = 0; 
+			i = 0;
 			while (*(needle + i) != '\0')
-				if (*(haystack + i) != *(needle + i))
-					break;
-				else
+				if (*(haystack + i) == *(needle + i))
 					i++;
+				else
+					break;
 			if (*(needle + i) == '\0')
 				return (haystack);
 		}
