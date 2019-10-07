@@ -17,5 +17,38 @@ int main(void)
     {
         printf("%s\n", f);
     }
+
+    s = "";
+    f = _strchr(s, 'l');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
+
+    s = "MAMA";
+    f = _strchr(s, 'l');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
+
+    s = "MAMAN";
+    f = _strchr(s, 'N');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
+
+    s = "L";
+    f = _strchr(s, 'L');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
+
     return (0);
 }
