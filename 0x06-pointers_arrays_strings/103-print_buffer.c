@@ -12,9 +12,9 @@
 void print_buffer(char *b, int size)
 {
 	int  i, j;
-	char b_str[20], b_hex[211110];
+	char b_str[11], b_hex[26];
 
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < size; i++)
 	{
 		b_hex[0] = '\0';
 		if ((i % 10) == 0)
@@ -37,7 +37,10 @@ void print_buffer(char *b, int size)
 					b_str[j + 1] = '\0';
 				}
 			}
-			printf("%s %s\n", b_hex, b_str);
+			printf("%s %s", b_hex, b_str);
+			printf("\n");
 		}
 	}
+	if (size == 0)
+		printf("\n");
 }
