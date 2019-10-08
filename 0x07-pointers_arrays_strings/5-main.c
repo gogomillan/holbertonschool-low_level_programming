@@ -16,11 +16,6 @@ int main(void)
     printf("%s\n", t);
 
     s = "hello, world";
-    f = "hello";
-    t = _strstr(s, f);
-    printf("%s\n", t);
-
-    s = "hello, world";
     f = "h";
     t = _strstr(s, f);
     printf("%s\n", t);
@@ -38,7 +33,7 @@ int main(void)
     s = "hello, world";
     f = "";
     t = _strstr(s, f);
-    printf("%s\n", t);
+    printf("-%s\n", t);
 
     s = "hello, wworld";
     f = "world";
