@@ -28,5 +28,5 @@ char *h = haystack, *n = needle;
 		haystack++;
 	}
 
-	return (haystack);
+	return (NULL);
 }
