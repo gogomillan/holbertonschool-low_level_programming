@@ -39,5 +39,10 @@ int main(void)
     f = "";
     t = _strstr(s, f);
     printf("%s\n", t);
+
+    s = "hello, wworld";
+    f = "world";
+    t = _strstr(s, f);
+    printf("%s\n", t);
     return (0);
 }
