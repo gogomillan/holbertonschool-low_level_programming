@@ -14,6 +14,8 @@ char *h = haystack, *n = needle;
 
 	while (needle[i] != '\0')
 		i++;
+	if (i == 0)
+		return (NULL);
 
 	while (*haystack != '\0')
 	{
