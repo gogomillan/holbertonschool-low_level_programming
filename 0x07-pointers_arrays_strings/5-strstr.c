@@ -26,8 +26,5 @@ int i = 0;
 		}
 	}
 
-	if (*needle == '\0')
-		while (*haystack != '\0')
-			haystack++;
 	return (haystack);
 }
