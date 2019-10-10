@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int _sqrt (int n, int b);
+int _sqrt(int n, int b);
 int _pow_recursion(int x, int y);
 
 /**
@@ -23,7 +23,7 @@ int _sqrt_recursion(int n)
  *
  * Return: The factorial.
  */
-int _sqrt (int n, int b)
+int _sqrt(int n, int b)
 {
 	if ((n - _pow_recursion(b, 2)) == 0)
 		return (b);
