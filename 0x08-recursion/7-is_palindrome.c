@@ -12,7 +12,7 @@ int is_palindrome(char *s)
 {
 	if (*s == '\0')
 		return (1);
-	return (_palindrome(s, strlen(s)));
+	return (_palindrome(s, _strlen_recursion(s)));
 }
 
 /**
@@ -29,4 +29,17 @@ int _palindrome(char *s, int l)
 	else if (l <= 1)
 		return (1);
 	return (_palindrome(++s, l - 2));
+}
+
+/**
+ * _strlen_recursion - return the lengh of a string
+ * @s: The string
+ *
+ * Return: None.
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + _strlen_recursion(++s));
 }
