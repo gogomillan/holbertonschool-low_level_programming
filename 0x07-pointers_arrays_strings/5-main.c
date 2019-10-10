@@ -25,10 +25,10 @@ int main(void)
     t = _strstr(s, f);
     printf("%s\n", t);
 
-    s = "hello, world";
-    f = "k";
-    t = _strstr(s, f);
-    printf("%s\n", t);
+    //s = "hello, world";
+    //f = "k";
+    //t = _strstr(s, f);
+    //printf("%s\n", t);
 
     s = "hello, world";
     f = "";
