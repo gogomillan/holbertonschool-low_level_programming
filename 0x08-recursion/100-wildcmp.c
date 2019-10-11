@@ -25,9 +25,9 @@ int wildcmp(char *s1, char *s2)
 			return (wildcmp(s1, ++s2));
 	else if (*s2 == '*' && *(s2 + 1) != '*')
 	{
-		if (_strstr(s1, (s2 + 1)) != NULL)
+		if (_strstr(s1, (s2 + 1)) != 0)
 			return (wildcmp(_strstr(s1, s2 + 1), s2 + 1));
-		else if (_strchr(s1, *(s2 + 1)) != NULL)
+		else if (_strchr(s1, *(s2 + 1)) != 0)
 			return (wildcmp(_strchr(s1, *(s2 + 1)), s2 + 1));
 		s2++;
 		return (wildcmp(s1, s2));
@@ -41,7 +41,7 @@ int wildcmp(char *s1, char *s2)
  * @s: the buffer source
  * @c: the char to find
  *
- * Return: The pointer to first occurency or NULL.
+ * Return: The pointer to first occurency or 0.
  */
 char *_strchr(char *s, char c)
 {
@@ -53,7 +53,7 @@ int i = 0, j;
 		if (*s == c)
 			return (s);
 
-	return (NULL);
+	return (0);
 }
 
 /**
@@ -85,5 +85,5 @@ char *h = haystack, *n = needle;
 		haystack++;
 	}
 
-	return (NULL);
+	return (0);
 }
