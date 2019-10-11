@@ -2,6 +2,7 @@
 
 char *_strchr(char *s, char c);
 char *_strstr(char *haystack, char *needle);
+char *_strstrstop(char *haystack, char *needle);
 
 /**
  * wildcmp - Compares two string to find out if they are identical
@@ -45,15 +46,11 @@ int wildcmp(char *s1, char *s2)
  */
 char *_strchr(char *s, char c)
 {
-int i = 0, j;
-
-	while (*(s + i) != '\0')
-		i++;
-	for (j = 0; j <= i; j++, s++)
-		if (*s == c)
-			return (s);
-
-	return (0);
+	if (*s == '\0')
+		return (0);
+	else if (*s == c)
+		return (s);
+	return (_strchr(++s, c));
 }
 
 /**
@@ -65,25 +62,41 @@ int i = 0, j;
  */
 char *_strstr(char *haystack, char *needle)
 {
-unsigned int i = 0, j;
-char *h = haystack, *n = needle;
-
-	while (needle[i] != '\0')
-		i++;
-
-	while (*haystack != '\0')
+	if (*needle == '\0')
+		return (haystack);
+	if (*haystack == '\0')
+		return (0);
+	if (*haystack == *needle)
 	{
-		h = haystack;
-		n = needle;
-		for (j = 0; j <= i && *h == *n && *h != '\0' && *n != '\0'; j++)
-		{
-			h++;
-			n++;
-		}
-		if ((j - i) == 0)
-			return (haystack);
-		haystack++;
+		if (_strstrstop(haystack, needle) != 0)
+			return (_strstrstop(haystack, needle));
+		else
+			return (_strstr(haystack + 1, needle));
 	}
+	else
+		return (_strstr(haystack + 1, needle));
+
+	return (0);
+}
+
+/**
+ * _strstrstop - locates a character in a string.
+ * @haystack: the buffer source
+ * @needle: the char to find
+ *
+ * Return: The pointer to first occurency or 0.
+ */
+char *_strstrstop(char *haystack, char *needle)
+{
+	if (*needle == '\0' && *haystack == '\0')
+		return (0);
+	if (*needle == '\0')
+		return (haystack);
+	if (*haystack == '\0')
+		return (0);
+	if (*haystack == *needle)
+		if (_strstrstop((haystack + 1), (needle + 1)) != 0)
+			return (_strstrstop(haystack + 1, needle + 1));
 
 	return (0);
 }
