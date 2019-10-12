@@ -1,6 +1,5 @@
 #include "holberton.h"
-
-int _pow(int b, int e);
+#include <math.h>
 
 /**
  * _atoi - convert a string s to an integer
@@ -10,6 +9,7 @@ int _pow(int b, int e);
  */
 int _atoi(char *s)
 {
+	int p, k;
 	int i, sign = 1, digit = 0, st, en = 0, b = 1;
 	int r = 0;
 
@@ -33,26 +33,8 @@ int _atoi(char *s)
 	if (en == 0)
 		en = i - 1;
 	for (i = st; i <= en; i++)
-		r += (s[i] - 48) * _pow(10, (en - i)) * sign;
+		for (k = 0, p = 10; k < (en - i); k++)
+			p = p * 10;
+		r += (s[i] - 48) * p * sign;
 	return (r);
-}
-
-/**
- * _pow - pow b to e potent
- * @b: The base
- * @e: The exponent
- *
- * Return: The integer value or 0 if s isn't a number
- */
-int _pow(int b, int e)
-{
-	int i;
-
-	if (e < 1)
-		return (1);
-
-	for (i = 1; i < e; i++)
-		b = b * 10;
-
-	return (b);
 }
