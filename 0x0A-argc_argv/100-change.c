@@ -16,7 +16,8 @@ int  a = 0, q = 0, c[] = { 25, 10, 5, 2, 1, 0 }, *cp = c;
 		printf("Error\n");
 		return (1);
 	}
-	if ((a = atoi(argv[1])) < 0)
+	a = atoi(argv[1]);
+	if (a < 0)
 		q = 0;
 	while (*cp)
 	{
