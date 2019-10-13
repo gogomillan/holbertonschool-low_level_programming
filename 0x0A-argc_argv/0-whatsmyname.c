@@ -2,6 +2,8 @@
 
 /**
  * main - check the code for Holberton School students.
+ * @argc: Qty of parameters
+ * @argv: The parameters themselves
  *
  * Return: 1 if no parameters, 0 if parameter are OK.
  */
