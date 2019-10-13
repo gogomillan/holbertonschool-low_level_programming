@@ -17,9 +17,7 @@ int  a = 0, q = 0, c[] = { 25, 10, 5, 2, 1, 0 }, *cp = c;
 		return (1);
 	}
 	a = atoi(argv[1]);
-	if (a < 0)
-		q = 0;
-	while (*cp)
+	while (*cp && a >= 0)
 	{
 		q += a / *cp;
 		a -= (a / *cp) * *cp;
