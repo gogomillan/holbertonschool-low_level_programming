@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * alloc_grid - concatenate two string
- * @s1: the first string
- * @s2: the second string
+ * alloc_grid - create a gid of numbers
+ * @width: the width of grid
+ * @height: the height f the grid
  *
- * Return: A pointer to the new concatenated string.
+ * Return: A pointer to the grid.
  */
 int **alloc_grid(int width, int height)
 {
