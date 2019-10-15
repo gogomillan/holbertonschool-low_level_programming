@@ -14,12 +14,12 @@ int i, j, **h;
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	h = (int **) malloc(height * sizeof(*h));
+	h = (int **) malloc(height * sizeof(long));
 	if (h == NULL)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		*(h + i) = malloc(width * sizeof(**h));
+		*(h + i) = malloc(width * sizeof(int));
 		if (*(h + i) == NULL)
 			return (NULL);
 		for (j = 0; j < width; j++)
