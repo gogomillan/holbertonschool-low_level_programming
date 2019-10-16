@@ -26,7 +26,7 @@ int i, j, t = 0;
 	p = (char *)malloc(t + 1);
 	if (p == NULL)
 		return (NULL);
-			
+
 	t = 0;
 	for (i = 0; i < ac; i++)
 	{
