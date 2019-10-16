@@ -21,7 +21,10 @@ int i, j, **h;
 	{
 		*(h + i) = malloc(width * sizeof(int));
 		if (*(h + i) == NULL)
+		{
+			free (h);
 			return (NULL);
+		}
 		for (j = 0; j < width; j++)
 			h[i][j] = 0;
 	}
