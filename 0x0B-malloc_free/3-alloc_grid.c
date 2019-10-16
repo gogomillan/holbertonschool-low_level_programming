@@ -22,6 +22,10 @@ int i, j, **h;
 		*(h + i) = malloc(width * sizeof(int));
 		if (*(h + i) == NULL)
 		{
+		int k;
+
+			for (k = i; k >= 0; k--)
+				free(*(h + k));
 			free(h);
 			return (NULL);
 		}
