@@ -1,16 +1,17 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
+ * malloc_checked - check the code for Holberton School students.
+ * @b: Quantity of bytes
  *
- * Return: Always 0.
+ * Return: 98 if error.
  */
 void *malloc_checked(unsigned int b)
 {
-    void *p;
+void *p;
 
-    p = malloc(b);
+	p = malloc(b);
 	if (p == NULL)
-		exit (98);
+		exit(98);
 	return (p);
 }
