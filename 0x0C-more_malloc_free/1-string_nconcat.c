@@ -28,11 +28,12 @@ char *s;
 	if (s == NULL)
 		return (NULL);
 
-	for (j = 0; j < size; j++)
+	for (j = 0; j < size - 1; j++)
 		if (*s1 != '\0')
 			s[j] = *(s1++);
 		else
 			s[j] = *(s2++);
+	s[j] = '\0';
 
 	return (s);
 }
