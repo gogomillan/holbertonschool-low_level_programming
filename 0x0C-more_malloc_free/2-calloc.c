@@ -15,8 +15,7 @@ unsigned int i;
 
 	if (nmemb <= 0 || size <= 0)
 		return (NULL);
-	/* if (size >= UINT_MAX / nmemb || nmemb >= UINT_MAX / size) */
-	/* return (NULL);*/
+
 	p = malloc(nmemb * size);
 	if (p == NULL)
 		return (NULL);
