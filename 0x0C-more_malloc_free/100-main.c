@@ -49,6 +49,32 @@ int main(void)
         p[i++] = 98;
     }
     simple_print_buffer(p, 98);
+    printf("--\n");
+    p = _realloc(p, sizeof(char) * 98, sizeof(char) * 10);
+    i = 0;
+    while (i < 10)
+    {
+        p[i++] = 98;
+    }
+    simple_print_buffer(p, 10);
+    free(p);
+    printf("--\n");
+    p = _realloc(NULL, 0, sizeof(char) * 98);
+    i = 0;
+    while (i < 98)
+    {
+        p[i++] = 98;
+    }
+    simple_print_buffer(p, 98);
+    free(p);
+    printf("--\n");
+    p = _realloc(NULL, sizeof(char) * 98, 0);
+    i = 0;
+    while (i < 98)
+    {
+        p[i++] = 98;
+    }
+    simple_print_buffer(p, 98);
     free(p);
     return (0);
 }

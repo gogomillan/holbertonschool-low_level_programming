@@ -16,10 +16,17 @@ unsigned int i;
 	if (new_size == old_size)
 		return (ptr);
 
-	if (new_size == 0 && ptr != NULL)
+	if (new_size == 0)
 	{
-		free(ptr);
-		return (NULL);
+		if (ptr != NULL)
+		{
+			free(ptr);
+			return (NULL);
+		}
+		else if (ptr == NULL && old_size != 0)
+		{
+			new_size = old_size;
+		}
 	}
 
 	po = ptr;
@@ -27,11 +34,14 @@ unsigned int i;
 	if (pn == NULL)
 		return (NULL);
 
-	if (old_size < new_size)
-		new_size = old_size;
-	for (i = 0; i < new_size; i++)
-		pn[i] = po[i];
-	free(po);
+	if (po != NULL)
+	{
+		if (old_size < new_size)
+			new_size = old_size;
+		for (i = 0; i < new_size; i++)
+			pn[i] = po[i];
+		free(po);
+	}
 
 	return (pn);
 }
