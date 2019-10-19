@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
 
 void _sum(char **s, int l);
 char *_multiplyrev(char *s, char c, int o);
