@@ -64,6 +64,8 @@ int  l, i;
 	_puts(t[i]);
 	_putchar('\n');
 
+	for (i = 0; i < l; i++)
+		free(t[i]);
 	free(t);
 
 	return (0);
