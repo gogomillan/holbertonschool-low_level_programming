@@ -107,8 +107,8 @@ unsigned int a, d = 0;
 	for (k = 0; k <= (j / 2); k++)
 	{
 		tmp = s[i][k];
-		s[i][k] = s[i][j-k];
-		s[i][j-k] = tmp;
+		s[i][k] = s[i][j - k];
+		s[i][j - k] = tmp;
 	}
 }
 
