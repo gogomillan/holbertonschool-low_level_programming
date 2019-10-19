@@ -171,7 +171,7 @@ int _isnumber(char *s)
  */
 int _lenght(char *s)
 {
-unsigned long long i = 0;
+unsigned long i = 0;
 
 	while (s[i] != '\0')
 		i++;
@@ -186,7 +186,7 @@ unsigned long long i = 0;
  */
 void _puts(char *s)
 {
-unsigned long long i = 0;
+unsigned long i = 0;
 
 	while (s[i] != '\0')
 	{
