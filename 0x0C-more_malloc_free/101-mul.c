@@ -1,9 +1,9 @@
 #include "holberton.h"
 
-void _sum(char **s, int l);
+void _sum(char **s, unsigned int l);
 char *_multiplyrev(char *s, char c, int o);
 int _isnumber(char *s);
-int _lenght(char *s);
+unsigned int _lenght(char *s);
 void _puts(char *s);
 
 /**
@@ -16,7 +16,7 @@ void _puts(char *s);
 int main(int argc, char **argv)
 {
 char **t, *max, *min;
-int  l, i;
+unsigned int  l, i;
 
 	if (argc != 3)
 	{
@@ -37,13 +37,13 @@ int  l, i;
 	{
 		max = argv[1];
 		min = argv[2];
-		l = _lenght(argv[2]);
+		l = _lenght(argv[1]);
 	}
 	else
 	{
 		max = argv[2];
 		min = argv[1];
-		l = _lenght(argv[1]);
+		l = _lenght(argv[2]);
 	}
 
 	t = malloc((l + 1) * sizeof(char **));
@@ -55,9 +55,9 @@ int  l, i;
 
 	for (i = 0; i < l; i++)
 	{
-		t[i] = _multiplyrev(max, min[l - i - 1], i);
+		t[i] = _multiplyrev(min, max[l - i - 1], i);
 	}
-	t[i] = malloc((_lenght(max) + i + 1) * sizeof(char));
+	t[i] = malloc((_lenght(min) + i + 1) * sizeof(char));
 
 	_sum(t, l);
 	_puts(t[i]);
@@ -77,10 +77,10 @@ int  l, i;
  *
  * Return: None
  */
-void _sum(char **s, int l)
+void _sum(char **s, unsigned int l)
 {
 char tmp;
-int  i, j = 0, k = 1;
+unsigned int  i, j = 0, k = 1;
 unsigned int a, d = 0;
 
 	for (j = 0; k == 1; j++)
@@ -127,7 +127,7 @@ char *r;
 unsigned int d = 0;
 int  i, j = 0;
 
-	r = malloc((_lenght(s) + o + 1) * sizeof(char));
+	r = malloc((_lenght(s) + o + 2) * sizeof(char));
 	if (r == NULL)
 		return (NULL);
 
@@ -169,7 +169,7 @@ int _isnumber(char *s)
  *
  * Return: Lenght.
  */
-int _lenght(char *s)
+unsigned int _lenght(char *s)
 {
 unsigned long i = 0;
 
