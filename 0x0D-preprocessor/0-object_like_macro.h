@@ -1,6 +1,7 @@
-#ifndef _GOGOMILLAN_
-#define _GOGOMILLAN_
- 
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
+
 #define SIZE 1024
- 
-#endif // #ifndef _GOGOMILLAN_
+int _putchar(char c);
+
+#endif /* HOLBERTON_H */
