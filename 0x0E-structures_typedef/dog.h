@@ -1,8 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
-int _putchar(char c);
-
 /**
  * struct dog - Like a class for a dog
  * @name: The name
@@ -17,5 +15,8 @@ struct dog
 	float age;
 	char *owner;
 };
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
+int _putchar(char c);
 
 #endif /* HOLBERTON_H */
