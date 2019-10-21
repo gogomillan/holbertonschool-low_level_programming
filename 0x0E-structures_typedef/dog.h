@@ -1,6 +1,8 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+#include <stdlib.h>
+
 /**
  * struct dog - Like a class for a dog
  * @name: The name
