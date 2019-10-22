@@ -11,7 +11,6 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t *my_dog;
-char  *n, *o;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
@@ -19,26 +18,19 @@ char  *n, *o;
 	my_dog = malloc(sizeof(dog_t));
 	if (my_dog == NULL)
 		return (NULL);
-	printf("%s [%u]\n", name, (_lenght(name) + 1));
-	n = malloc((_lenght(name) + 1) * sizeof(char));
-	if (n == NULL)
+	my_dog->name = _strdup(name);
+	if (my_dog->name == NULL)
 	{
 		free(my_dog);
 		return (NULL);
 	}
-	printf("%s [%u]\n", owner, (_lenght(owner) + 1));
-	o = malloc((_lenght(owner) + 1) * sizeof(char));
-	if (o == NULL)
+	my_dog->owner = _strdup(owner);
+	if (my_dog->owner == NULL)
 	{
-		free(n);
+		free(my_dog->name);
 		free(my_dog);
 		return (NULL);
 	}
-
-	n = _strcpy(n, name);
-	o = _strcpy(o, owner);
-	my_dog->name = n;
-	my_dog->owner = o;
 	my_dog->age = age;
 
 	return (my_dog);
@@ -75,4 +67,30 @@ unsigned long i = 0;
 	d[i] = s[i];
 
 	return (d);
+}
+
+/**
+ * _strdup - create a new same string from other
+ * @str: the original string
+ *
+ * Return: The new space of memory to the new string.
+ */
+char *_strdup(char *str)
+{
+unsigned int j = 0, size;
+char *s;
+
+    if (str == NULL)
+        return (NULL);
+
+    while (str[j] != '\0')
+        j++;
+    size = j + 1;
+    s = (char *) malloc(size * sizeof(char));
+    if (s == NULL)
+        return (NULL);
+
+    for (j = 0; j < size; j++)
+        s[j] = str[j];
+    return (s);
 }

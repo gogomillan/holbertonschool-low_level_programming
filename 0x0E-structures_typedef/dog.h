@@ -20,6 +20,7 @@ typedef struct dog
 	char *owner;
 } dog_t;
 
+char *_strdup(char *str);
 unsigned int _lenght(char *s);
 char *_strcpy(char *d, char *s);
 void free_dog(dog_t *d);
