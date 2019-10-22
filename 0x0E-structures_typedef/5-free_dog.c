@@ -1,10 +1,8 @@
 #include "dog.h"
 
 /**
- * new_dog - Create the structure
- * @name: The name
- * @age: The age
- * @owner: The owner
+ * free_dog - Release memory from the structure
+ * @d: The dog
  *
  * Return: The pointer to structure
  */
