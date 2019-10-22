@@ -52,14 +52,15 @@ unsigned int _lenght(char *s)
 {
 unsigned long i = 0;
 
-    while (s[i] != '\0')
-        i++;
-    return (i);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
 /**
- * _lenght - Find out the lenght of a string
- * @s: The string
+ * _strcpy - Copy a string
+ * @d: The destiny
+ * @s: The source
  *
  * Return: Lenght.
  */
@@ -71,5 +72,5 @@ unsigned long i = 0;
 		d[i] = s[i];
 	d[i] = s[i];
 
-    return (d);
+	return (d);
 }
