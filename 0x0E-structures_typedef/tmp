@@ -1,0 +1,2 @@
+unsigned int _lenght(char *s);
+char *_strcpy(char *d, char *s);

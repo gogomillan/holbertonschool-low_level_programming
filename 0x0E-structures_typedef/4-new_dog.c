@@ -1,8 +1,5 @@
 #include "dog.h"
 
-unsigned int _lenght(char *s);
-char *_strcpy(char *d, char *s);
-
 /**
  * new_dog - Create the structure
  * @name: The name
@@ -15,6 +12,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t *my_dog;
 char  *n, *o;
+
+	if (name == NULL || owner == NULL)
+		return (NULL);
 
 	my_dog = malloc(sizeof(dog_t));
 	if (my_dog == NULL)

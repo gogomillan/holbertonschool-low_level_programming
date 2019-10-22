@@ -20,6 +20,8 @@ typedef struct dog
 	char *owner;
 } dog_t;
 
+unsigned int _lenght(char *s);
+char *_strcpy(char *d, char *s);
 void free_dog(dog_t *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void print_dog(struct dog *d);
