@@ -80,17 +80,17 @@ char *_strdup(char *str)
 unsigned int j = 0, size;
 char *s;
 
-    if (str == NULL)
-        return (NULL);
+	if (str == NULL)
+	return (NULL);
 
-    while (str[j] != '\0')
-        j++;
-    size = j + 1;
-    s = (char *) malloc(size * sizeof(char));
-    if (s == NULL)
-        return (NULL);
+	while (str[j] != '\0')
+		j++;
+	size = j + 1;
+	s = (char *) malloc(size * sizeof(char));
+	if (s == NULL)
+		return (NULL);
 
-    for (j = 0; j < size; j++)
-        s[j] = str[j];
-    return (s);
+	for (j = 0; j < size; j++)
+		s[j] = str[j];
+	return (s);
 }
