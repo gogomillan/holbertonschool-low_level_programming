@@ -19,22 +19,24 @@ char  *n, *o;
 	my_dog = malloc(sizeof(dog_t));
 	if (my_dog == NULL)
 		return (NULL);
-	n = malloc(_lenght(name) * sizeof(char));
+	printf("%s [%u]\n", name, (_lenght(name) + 1));
+	n = malloc((_lenght(name) + 1) * sizeof(char));
 	if (n == NULL)
 	{
 		free(my_dog);
 		return (NULL);
 	}
-	o = malloc(_lenght(owner) * sizeof(char));
+	printf("%s [%u]\n", owner, (_lenght(owner) + 1));
+	o = malloc((_lenght(owner) + 1) * sizeof(char));
 	if (o == NULL)
 	{
-		free(my_dog);
 		free(n);
+		free(my_dog);
 		return (NULL);
 	}
 
-	_strcpy(n, name);
-	_strcpy(o, owner);
+	n = _strcpy(n, name);
+	o = _strcpy(o, owner);
 	my_dog->name = n;
 	my_dog->owner = o;
 	my_dog->age = age;
