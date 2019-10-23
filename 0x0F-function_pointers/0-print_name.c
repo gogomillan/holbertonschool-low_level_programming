@@ -1,6 +1,7 @@
 /**
  * print_name - prints a name
  * @name: name of the person
+ * @f: name of the function
  *
  * Return: Nothing.
  */
