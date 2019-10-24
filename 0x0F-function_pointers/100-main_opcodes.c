@@ -2,21 +2,6 @@
 #include <stdlib.h>
 
 /**
- * _lenght - Find out the lenght of a string
- * @s: The string
- *
- * Return: Lenght.
- */
-unsigned int _lenght(char *s)
-{
-unsigned long i = 0;
-
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-/**
  * main - print the n first opcodes
  *
  * @argc: The qty of parameters
@@ -27,7 +12,7 @@ unsigned long i = 0;
  */
 int main(int argc, char **argv)
 {
-char *p, s[20];
+char *p;
 int (*opcodes)(int, char **);
 int i;
 
@@ -50,9 +35,6 @@ int i;
 		if (i != 0)
 			printf(" ");
 		printf("%02hhx", *(p + i));
-		//sprintf(s, "%02x", *(p + i));
-		//printf("%s", s + _lenght(s) - 2);
-		//printf("%s", s + _lenght(s) - 2);
 	}
 	printf("\n");
 
