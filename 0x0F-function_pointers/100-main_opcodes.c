@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include <stdio.h>
 
 /**
  * _lenght - Find out the lenght of a string
