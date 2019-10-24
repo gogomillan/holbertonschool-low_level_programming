@@ -12,13 +12,14 @@
 int main(int argc, char **argv)
 {
 char o = argv[2][0];
+char o2 = argv[2][1];
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		return (98);
 	}
-	if (o != '+' && o != '-' && o != '*' && o != '/' && o != '%')
+	if ((o != '+' && o != '-' && o != '*' && o != '/' && o != '%') || o2 != '\0')
 	{
 		printf("Error\n");
 		return (99);
