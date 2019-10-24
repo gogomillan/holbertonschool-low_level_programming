@@ -49,7 +49,7 @@ int i;
 	{
 		if (i != 0)
 			printf(" ");
-		sprintf(s, "%x", *(p + i));
+		sprintf(s, "%02x", *(p + i));
 		printf("%s", s + _lenght(s) - 2);
 	}
 	printf("\n");
