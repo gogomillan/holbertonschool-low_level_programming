@@ -1,12 +1,11 @@
 #include "3-calc.h"
 
 /**
- * op_add - add two numbers
+ * get_op_func - Acording to a sign return its function
  *
- * @a: The first argument
- * @b: The second argument
+ * @s: The sign
  *
- * Return: The add
+ * Return: A pointer to the function
  *
  */
 int (*get_op_func(char *s))(int, int)

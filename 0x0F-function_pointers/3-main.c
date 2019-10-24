@@ -16,20 +16,20 @@ char o = argv[2][0];
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return(98);
+		return (98);
 	}
 	if (o != '+' && o != '-' && o != '*' && o != '/' && o != '%')
 	{
 		printf("Error\n");
-		return(99);
+		return (99);
 	}
 	if ((o == '/' || o == '%') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
-		return(100);
+		return (100);
 	}
 
 	printf("[%d]\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
-	
+
 	return (0);
 }
