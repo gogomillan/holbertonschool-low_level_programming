@@ -1,6 +1,21 @@
 #include "3-calc.h"
 
 /**
+ * _lenght - Find out the lenght of a string
+ * @s: The string
+ *
+ * Return: Lenght.
+ */
+unsigned int _lenght(char *s)
+{
+unsigned long i = 0;
+
+    while (s[i] != '\0')
+        i++;
+    return (i);
+}
+
+/**
  * main - print the n first opcodes
  *
  * @argc: The qty of parameters
@@ -34,7 +49,7 @@ int i;
 		if (i != 0)
 			printf(" ");
 		sprintf(s, "%x", *(p + i));
-		printf("%s", s + strlen(s) - 2);
+		printf("%s", s + _lenght(s) - 2);
 	}
 	printf("\n");
 
