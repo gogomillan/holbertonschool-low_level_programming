@@ -1,0 +1,11 @@
+/**
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
+typedef struct op
+{
+	char op;
+	void (*f)(va_list valist);
+} op_t;
