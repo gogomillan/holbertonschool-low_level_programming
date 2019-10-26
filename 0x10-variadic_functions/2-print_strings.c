@@ -14,7 +14,7 @@ va_list valist;
 unsigned int i;
 char *p;
 
-	va_start (valist, n);
+	va_start(valist, n);
 
 	for (i = 0; i < n; i++)
 	{
