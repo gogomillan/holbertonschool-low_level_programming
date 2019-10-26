@@ -21,6 +21,6 @@ unsigned int i;
 			printf("%s", separator);
 		printf("%d", va_arg(valist, int));
 	}
-	printf("%.*s", n, "\n");
+	printf("\n");
 	va_end(valist);
 }
