@@ -17,10 +17,10 @@ unsigned int i;
 
 	for (i = 0; i < n; i++)
 	{
-		if (separator == NULL && i != 0)
+		if (separator != NULL && i != 0)
 			printf("%s", separator);
 		printf("%d", va_arg(valist, int));
 	}
-	printf("\n");
+	printf("%.*s", n, "\n");
 	va_end(valist);
 }
