@@ -17,7 +17,7 @@ unsigned int i;
 
 	for (i = 0; i < n; i++)
 	{
-		if (separatr == NULL && i != 0)
+		if (separator == NULL && i != 0)
 			printf("%s", separator);
 		printf("%d", va_arg(valist, int));
 	}
