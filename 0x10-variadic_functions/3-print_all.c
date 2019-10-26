@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+void pr_integer(va_list valist);
+void pr_char(va_list valist);
+void pr_float(va_list valist);
+void pr_string(va_list valist);
+
 /**
  * print_all - Print numbers using a separator
  * @format: The format to print
