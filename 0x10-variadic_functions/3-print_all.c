@@ -8,12 +8,9 @@
  *
  * Return: Nothing
  */
-void pr_integer(va_list valist)
+void pr_integer(va_list i)
 {
-int i;
-
-	i = va_arg(valist, int);
-	printf("%d", i);
+	printf("%d", va_arg(i, int));
 }
 
 /**
@@ -22,12 +19,9 @@ int i;
  *
  * Return: Nothing
  */
-void pr_char(va_list valist)
+void pr_char(va_list c)
 {
-int c;
-
-	c = va_arg(valist, int);
-	printf("%c", c);
+	printf("%c", va_arg(c, int));
 }
 
 /**
@@ -36,12 +30,9 @@ int c;
  *
  * Return: Nothing
  */
-void pr_float(va_list valist)
+void pr_float(va_list f)
 {
-double f;
-
-	f = va_arg(valist, double);
-	printf("%lf", f);
+	printf("%lf", va_arg(f, double));
 }
 
 /**
@@ -50,14 +41,14 @@ double f;
  *
  * Return: Nothing
  */
-void pr_string(va_list valist)
+void pr_string(va_list s)
 {
-char *s;
+char *str;
 
-	s = va_arg(valist, char *);
-	if (s == NULL)
-		s = "(nil)";
-	printf("%s", s);
+	str = va_arg(s, char *);
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
 }
 
 /**
