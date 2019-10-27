@@ -4,7 +4,7 @@
 
 /**
  * pr_integer - Print an integer
- * @valist: The list of numbers
+ * @i: The list of numbers
  *
  * Return: Nothing
  */
@@ -15,7 +15,7 @@ void pr_integer(va_list i)
 
 /**
  * pr_char - Print a char
- * @valist: The list of numbers
+ * @c: The list of numbers
  *
  * Return: Nothing
  */
@@ -26,7 +26,7 @@ void pr_char(va_list c)
 
 /**
  * pr_float - Print a float
- * @valist: The list of numbers
+ * @f: The list of numbers
  *
  * Return: Nothing
  */
@@ -37,7 +37,7 @@ void pr_float(va_list f)
 
 /**
  * pr_string - Print a string
- * @valist: The list of numbers
+ * @s: The list of numbers
  *
  * Return: Nothing
  */
@@ -63,11 +63,11 @@ void print_all(const char * const format, ...)
 va_list valist;
 unsigned int k = 0, l = 0, f = 0;
 op_t ops[] = {
-	{'c', pr_char},
-	{'i', pr_integer},
-	{'f', pr_float},
-	{'s', pr_string},
-	{'\0', NULL}
+	{"c", pr_char},
+	{"i", pr_integer},
+	{"f", pr_float},
+	{"s", pr_string},
+	{NULL, NULL}
 };
 
 	va_start(valist, format);
@@ -75,9 +75,9 @@ op_t ops[] = {
 	while (format != NULL && *(format + k) != '\0')
 	{
 		l = 0;
-		while (ops[l].op != '\0')
+		while (ops[l].op != NULL)
 		{
-			if (*(format + k) == ops[l].op)
+			if (*(format + k) == ops[l].op[0])
 			{
 				printf("%.*s", f * 2, ", ");
 				(*(ops[l].f))(valist);

@@ -13,7 +13,7 @@
  */
 typedef struct op
 {
-	char op;
+	char *op;
 	void (*f)(va_list valist);
 } op_t;
 
