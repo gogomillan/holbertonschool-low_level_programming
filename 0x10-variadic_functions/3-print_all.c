@@ -60,8 +60,9 @@ char *str;
  */
 void print_all(const char * const format, ...)
 {
+char *separator = "";
 va_list valist;
-unsigned int k = 0, l = 0, f = 0;
+unsigned int k = 0, l = 0;
 op_t ops[] = {
 	{"c", pr_char},
 	{"i", pr_integer},
@@ -79,9 +80,9 @@ op_t ops[] = {
 		{
 			if (*(format + k) == ops[l].op[0])
 			{
-				printf("%.*s", f * 2, ", ");
-				(*(ops[l].f))(valist);
-				f = 1;
+				printf("%s", separator);
+				ops[l].f(valist);
+				separator = ", ";
 			}
 			l++;
 		}
