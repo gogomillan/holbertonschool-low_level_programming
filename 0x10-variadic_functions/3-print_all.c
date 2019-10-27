@@ -32,7 +32,7 @@ void pr_char(va_list c)
  */
 void pr_float(va_list f)
 {
-	printf("%lf", va_arg(f, double));
+	printf("%f", va_arg(f, double));
 }
 
 /**
