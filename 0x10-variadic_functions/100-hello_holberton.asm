@@ -1,24 +1,24 @@
-section     .text                     ; code
-global      main                      ; program entry, used by ld
+section     .text                     
+global      main                      
 
-main:                                 ; tell linker entry point
-                                      ; set up for write() system call
-    mov     eax,4                     ; set system call # (4 = sys_write)
-                                      ; // now set the arguments
-                                      ; // write(int fd, const void *buf, size_t count);
-    mov     ebx,1                     ; file desc (1 = stdout) // fd
-    mov     ecx,msg                   ; string                 // buf
-    mov     edx,len                   ; string length          // count
+main:                                 
+                                      
+    mov     eax,4                     
+                                      
+                                      
+    mov     ebx,1                     
+    mov     ecx,msg                   
+    mov     edx,len                   
 
-    int     0x80                      ; interrupt to kernel
-                                      ; set up for exit() system call
-    mov     eax,1                     ; set system call # (1 = sys_exit)
-                                      ; ebx has error code
-    int     0x80                      ; call kernel
+    int     0x80                      
+                                      
+    mov     eax,1                     
+                                      
+    int     0x80                      
 
-section     .data                     ; initialized global variables,
-                                      ; used in code above
+section     .data                     
+                                      
 
-msg     db  'Hello, Holberton',0xa    ; define string, `db` = 8  bit variable (char)
-                                      ; 0xa = 10 = newline character in ASCII
-len     equ $ - msg                   ; define string len
+msg     db  'Hello, Holberton',0xa    
+                                      
+len     equ $ - msg                   
