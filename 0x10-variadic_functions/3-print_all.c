@@ -87,6 +87,6 @@ op_t ops[] = {
 		}
 		k++;
 	}
-	printf("%.*s", f, "\n");
+	printf("\n");
 	va_end(valist);
 }
