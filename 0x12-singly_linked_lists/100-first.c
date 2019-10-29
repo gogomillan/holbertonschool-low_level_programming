@@ -1,13 +1,12 @@
 #include "lists.h"
 
-void _inicial (void) __attribute__ ((constructor));
-
 /**
- * _init - Function before main
+ * _inicial - Function before main
  *
  * Return: Nothing
  */
-void _inicial (void)
+void _inicial(void)
 {
-	printf ("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
