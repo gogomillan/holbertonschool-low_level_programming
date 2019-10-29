@@ -14,5 +14,6 @@ int main(void)
     print_all("cise", 'H', 0, "Holberton School");
     print_all("cisecise", 'H', 0, NULL, 'H', 100, "MAMA");
     print_all(NULL, 'H', 0, "lberton");
+	printf("%f", 10.5);
     return (0);
 }
