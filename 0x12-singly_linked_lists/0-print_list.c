@@ -2,7 +2,7 @@
 
 /**
  * print_list - Prints a list of elements of list_t's type.
- * @list_t: List of elements.
+ * @h: List of elements.
  *
  * Return:	Number of nodes.
  */
