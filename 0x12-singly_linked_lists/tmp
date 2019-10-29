@@ -1,0 +1,2 @@
+void _init (void) __attribute__ ((constructor));
+void _final (void) __attribute__ ((destructor)); 
