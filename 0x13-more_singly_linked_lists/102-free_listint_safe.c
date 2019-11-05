@@ -11,7 +11,7 @@ size_t free_listint_safe(listint_t **h)
 size_t c = 0;
 listint_t *e, *prev;
 
-	if (h == NULL || *h == NULL)
+	if (h == NULL)
 		return (0);
 
 	e = *h;
@@ -23,7 +23,7 @@ listint_t *e, *prev;
 		{
 			e = e->next;
 			free(prev);
-			free(e);
+			/* free(e); */
 			c++;
 			break;
 		}
