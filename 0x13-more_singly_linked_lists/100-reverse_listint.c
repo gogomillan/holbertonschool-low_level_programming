@@ -1,5 +1,7 @@
 #include "lists.h"
 
+listint_t *swap_listint (listint_t *node, listint_t *prev);
+
 /**
  * reverse_listint - Reverse a listint_t list.
  * @head: Head of the list
@@ -8,29 +10,37 @@
  */
 listint_t *reverse_listint(listint_t **head)
 {
-listint_t *node = *head, *prev;
+listint_t *new;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return (NULL);
 
-	while (node != NULL)
-	{
-		prev = node;
-		printf("[%d] - ", prev->n);
-		node = node->next;
-		printf("[%d]", node->n);
-		getchar();
-		if (prev == *head)
-			prev->next = NULL;
-		if (node->next == NULL)
-		{
-			*head = node;
-			node->next = prev;
-			node = NULL;
-		}
-		else
-			node->next = prev;
-	}
-
+	new = swap_listint ((*head)->next, *head);
+	(*head)->next = NULL;
+	*head = new;
+	
 	return (*head);
+}
+
+/**
+ * swap_lisint - swap two elements of a listint_t list
+ * @node: The current node
+ * @prev: The previous node
+ *
+ * Return: Nothing
+ */
+listint_t *swap_listint (listint_t *node, listint_t *prev)
+{
+listint_t *head;
+
+	if (node == NULL)
+		return (prev);
+	if (node->next == NULL)
+	{
+		node->next = prev;
+		return (node);
+	}
+	head = swap_listint (node->next, node);
+	node->next = prev;
+	return (head);
 }
