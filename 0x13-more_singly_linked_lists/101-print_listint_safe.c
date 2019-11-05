@@ -11,6 +11,14 @@ size_t print_listint_safe(const listint_t *head)
 size_t c = 0;
 listint_t *e = (listint_t *)head;
 
+	if (e == NULL)
+		return (0);
+	if (e == e->next)
+	{
+		printf("-> [%p] %d\n", (void *)e, e->n);
+		return (0);
+	}
+
 	while (e != NULL)
 	{
 		printf("[%p] %d\n", (void *)e, e->n);
