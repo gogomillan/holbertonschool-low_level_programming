@@ -22,7 +22,8 @@ listint_t *node, *new;
 		c++;
 		node = node->next;
 	}
-	if ((idx - c) > 1)
+	/* if ((idx - c) > 1) */
+	if (c != idx)
 		return (NULL);
 
 	new = malloc(sizeof(listint_t));
