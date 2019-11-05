@@ -15,6 +15,9 @@ listint_t *node, *new;
 
 	if (head == NULL)
 		return (NULL);
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
 
 	node = *head;
 	while (node->next != NULL && c < idx)
@@ -22,14 +25,11 @@ listint_t *node, *new;
 		c++;
 		node = node->next;
 	}
-	/* if ((idx - c) > 1) */
-	if (c != idx)
+	if ((idx - c) > 1)
+	{
+		free(new);
 		return (NULL);
-
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-
+	}
 	if (idx == 0)
 	{
 		new->n = n;
