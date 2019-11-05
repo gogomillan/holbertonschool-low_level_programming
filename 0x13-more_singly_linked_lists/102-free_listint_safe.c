@@ -13,22 +13,17 @@ listint_t *e, *prev;
 
 	if (*h == NULL)
 		return (0);
-	e = *h;
-	if (e == e->next)
-	{
-		free(e);
-		return (1);
-	}
 
+	e = *h;
 	while (e != NULL)
 	{
 		prev = e;
 		c++;
-		if (e->next > e)
+		if (e->next >= e)
 		{
 			e = e->next;
 			free(prev);
-			/* free(e); */
+			*h = NULL;
 			break;
 		}
 		e = e->next;
