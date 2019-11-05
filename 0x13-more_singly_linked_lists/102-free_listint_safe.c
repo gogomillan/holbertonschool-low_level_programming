@@ -17,7 +17,7 @@ listint_t *e, *prev;
 	if (e == e->next)
 	{
 		free(e);
-		return (0);
+		return (1);
 	}
 
 	while (e != NULL)
