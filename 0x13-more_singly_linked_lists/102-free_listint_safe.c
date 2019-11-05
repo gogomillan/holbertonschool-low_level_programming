@@ -11,7 +11,15 @@ size_t free_listint_safe(listint_t **h)
 size_t c = 0;
 listint_t *e, *prev;
 
+	if (*h == NULL)
+		return (0);
 	e = *h;
+	if (e == e->next)
+	{
+		free(e);
+		return (0);
+	}
+
 	while (e != NULL)
 	{
 		prev = e;
