@@ -19,7 +19,8 @@ listint_t *e = (listint_t *)head;
 		{
 			e = e->next;
 			printf("-> [%p] %d\n", (void *)e, e->n);
-			exit(98);
+			/* exit(98); */
+			break;
 		}
 		e = e->next;
 	}
