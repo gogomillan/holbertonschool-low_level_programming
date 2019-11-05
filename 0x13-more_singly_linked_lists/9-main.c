@@ -26,8 +26,5 @@ int main(void)
     insert_nodeint_at_index(&head, 5, 4096);
     print_listint(head);
     free_listint2(&head);
-    printf("-----------------\n");
-    insert_nodeint_at_index(&head, 0, 4096);
-    print_listint(head);
     return (0);
 }
