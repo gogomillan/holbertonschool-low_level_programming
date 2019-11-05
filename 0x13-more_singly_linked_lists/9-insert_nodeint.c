@@ -49,5 +49,5 @@ listint_t *node, *new;
 		new->next = NULL;
 	}
 
-	return (new);
+	return (node);
 }
