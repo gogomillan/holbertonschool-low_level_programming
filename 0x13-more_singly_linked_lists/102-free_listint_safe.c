@@ -29,7 +29,6 @@ listint_t *e, *prev;
 			e = e->next;
 			free(prev);
 			/* free(e); */
-			c++;
 			break;
 		}
 		e = e->next;
