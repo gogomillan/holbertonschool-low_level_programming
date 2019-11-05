@@ -17,17 +17,18 @@ listint_t *node, *new;
 		return (NULL);
 
 	node = *head;
-	while (node != NULL && c < idx)
+	while (node->next != NULL && c < idx)
 	{
 		c++;
 		node = node->next;
 	}
-	if (c != idx)
+	if ((idx - c) > 1)
 		return (NULL);
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
+
 	if (idx == 0)
 	{
 		new->n = n;
@@ -35,19 +36,17 @@ listint_t *node, *new;
 		*head = new;
 		return (new);
 	}
-
-	if (node != NULL)
+	if (node->next == NULL && c < idx)
 	{
-		new->n = node->n;
-		new->next = node->next;
-		node->n = n;
 		node->next = new;
-	}
-	else
-	{
 		new->n = n;
 		new->next = NULL;
+		return (new);
 	}
+	new->n = node->n;
+	new->next = node->next;
+	node->n = n;
+	node->next = new;
 
 	return (node);
 }

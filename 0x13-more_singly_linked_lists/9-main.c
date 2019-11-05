@@ -26,10 +26,16 @@ int main(void)
     insert_nodeint_at_index(&head, 5, 4096);
     print_listint(head);
     printf("-----------------\n");
-    insert_nodeint_at_index(&head, 0, 1111);
+    insert_nodeint_at_index(&head, 0, 1001);
     print_listint(head);
     printf("-----------------\n");
     insert_nodeint_at_index(&head, 9, 9999);
+    print_listint(head);
+    printf("-----------------\n");
+    insert_nodeint_at_index(&head, 11, 1111);
+    print_listint(head);
+    printf("-----------------\n");
+    insert_nodeint_at_index(&head, 13, 1313);
     print_listint(head);
     free_listint2(&head);
     return (0);
