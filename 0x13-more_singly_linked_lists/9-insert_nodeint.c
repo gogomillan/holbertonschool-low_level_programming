@@ -25,10 +25,18 @@ listint_t *node = *head, *new;
 	if (new == NULL)
 		return (NULL);
 
-	new->n = node->n;
-	new->next = node->next;
-	node->n = n;
-	node->next = new;
+	if (node != NULL)
+	{
+		new->n = node->n;
+		new->next = node->next;
+		node->n = n;
+		node->next = new;
+	}
+	else
+	{
+		new->n = n;
+		new->next = NULL;
+	}
 
 	return (new);
 }
