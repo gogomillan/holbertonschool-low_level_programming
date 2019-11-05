@@ -13,7 +13,7 @@ unsigned int c = 0;
 listint_t *node = *head, *next;
 
 	if (*head == NULL)
-		return(-1);
+		return (-1);
 
 	while (node != NULL && c < index)
 	{
