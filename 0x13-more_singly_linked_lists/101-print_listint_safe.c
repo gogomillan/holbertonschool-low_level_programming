@@ -13,17 +13,12 @@ listint_t *e = (listint_t *)head;
 
 	if (e == NULL)
 		return (0);
-	if (e == e->next)
-	{
-		printf("-> [%p] %d\n", (void *)e, e->n);
-		return (0);
-	}
 
 	while (e != NULL)
 	{
 		printf("[%p] %d\n", (void *)e, e->n);
 		c++;
-		if (e->next > e)
+		if (e->next >= e)
 		{
 			e = e->next;
 			printf("-> [%p] %d\n", (void *)e, e->n);
