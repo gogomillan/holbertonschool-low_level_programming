@@ -6,7 +6,7 @@ listint_t *swap_listint (listint_t *node, listint_t *prev);
  * reverse_listint - Reverse a listint_t list.
  * @head: Head of the list
  *
- * Return: A pointer to the first node of the reversed list. 
+ * Return: A pointer to the first node of the reversed list.
  */
 listint_t *reverse_listint(listint_t **head)
 {
@@ -18,7 +18,7 @@ listint_t *new;
 	new = swap_listint ((*head)->next, *head);
 	(*head)->next = NULL;
 	*head = new;
-	
+
 	return (*head);
 }
 
