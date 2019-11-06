@@ -8,7 +8,7 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-listint_t *e = head;
+listint_t *e = head, *next;
 
 	if (e == NULL)
 		return (NULL);
@@ -17,10 +17,15 @@ listint_t *e = head;
 
 	while (e != NULL)
 	{
-		if (e->next > e)
+		printf("\n[%d]", e->n);
+		getchar();
+		next = e->next;
+		while (next && next )
 		{
-			e = e->next;
-			return (e);
+			printf("| %d - ", next->n);
+			if (e == next)
+				return (e);
+			next = next->next;
 		}
 		e = e->next;
 	}
