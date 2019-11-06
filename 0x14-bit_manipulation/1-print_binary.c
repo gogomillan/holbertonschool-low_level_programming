@@ -16,6 +16,6 @@ unsigned long int masc = 1;
 		return;
 	}
 
-	print_binary (n >> 1);
+	print_binary(n >> 1);
 	printf("%ld", n & masc);
 }
