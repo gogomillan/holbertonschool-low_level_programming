@@ -10,9 +10,12 @@ void print_binary(unsigned long int n)
 {
 unsigned long int masc = 1;
 
-	while (n > 0)
+	if (n <= 1)
 	{
 		printf("%ld", n & masc);
-		n = n >> 1;
+		return;
 	}
+
+	print_binary (n >> 1);
+	printf("%ld", n & masc);
 }
