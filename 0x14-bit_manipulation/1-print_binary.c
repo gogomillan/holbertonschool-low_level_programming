@@ -12,10 +12,10 @@ unsigned long int masc = 1;
 
 	if (n <= 1)
 	{
-		printf("%ld", n & masc);
+		_putchar((n & masc) + 48);
 		return;
 	}
 
 	print_binary(n >> 1);
-	printf("%ld", n & masc);
+	_putchar((n & masc) + 48);
 }
