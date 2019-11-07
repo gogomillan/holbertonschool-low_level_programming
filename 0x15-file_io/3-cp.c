@@ -15,14 +15,14 @@ int main(int ac, char **av)
 int fdf, fdt;		/* File Descriptor from and to */
 ssize_t qty;		/* Quantity to read and write */
 char buffer[BUFFER_SIZE];	/* The buffer */
+mode_t perm = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 
 	if (ac != 3)
 		_msgerr(STDERR_FILENO, "Usage: cp file_from file_to%s", "\n", 97);
 	fdf = open(av[1], O_RDONLY);
 	if (fdf <= -1)
 		_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
-	fdt = open(av[2], O_CREAT | O_WRONLY | O_TRUNC,
-					 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fdt = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, perm);
 	if (fdt <= -1)
 		_msgerr(STDERR_FILENO, "Error: Can't write to %s\n", av[2], 99);
 
