@@ -18,11 +18,13 @@ ssize_t qty, c = 0;	/* Quantity readed */
 	if (letters <= 0)
 		return (0);
 	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	if (fd <= -1)
 		return (0);
 
 	do {
 		qty = read(fd, &buf, 1);
+		if (qty <= -1)
+			return (0);
 		letters -= qty;
 		if (write(1, &buf, qty) != qty)
 			return (0);
