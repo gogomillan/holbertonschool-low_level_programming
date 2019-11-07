@@ -20,7 +20,7 @@ ssize_t qty;	/* Quantity to write */
 
 	while (text_content != NULL && *text_content != '\0')
 	{
-	 	qty = write(fd, text_content, 1);
+		qty = write(fd, text_content, 1);
 		if (qty < 1)
 			return (-1);
 		text_content++;
