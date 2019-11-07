@@ -31,6 +31,7 @@ ssize_t qty, c = 0;	/* Quantity readed */
 		c += qty;
 	} while (letters > 0 && qty > 0);
 
-	close(fd);
+	if (close(fd) == -1)
+		return (0);
 	return (c);
 }
