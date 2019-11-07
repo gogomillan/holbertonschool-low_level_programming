@@ -17,7 +17,7 @@ ssize_t qty, c = 0;	/* Quantity readed */
 		return (0);
 	if (letters <= 0)
 		return (0);
-	fd = open(filename, O_RDONLY);
+	fd = open(filename, O_RDWR);
 	if (fd <= -1)
 		return (0);
 
@@ -26,7 +26,7 @@ ssize_t qty, c = 0;	/* Quantity readed */
 		if (qty <= -1)
 			return (0);
 		letters -= qty;
-		if (write(1, &buf, qty) != qty)
+		if (write(STDOUT_FILENO, &buf, qty) != qty)
 			return (0);
 		c += qty;
 	} while (letters > 0 && qty > 0);
