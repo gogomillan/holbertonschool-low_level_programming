@@ -35,15 +35,9 @@ char buffer[1024];	/* The buffer */
 	} while (qty != 0);
 
 	if (close(fdt) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdt);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdt), exit(100);
 	if (close(fdf) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdf);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdf), exit(100);
 
 	return (0);
 }
