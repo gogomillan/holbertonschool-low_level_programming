@@ -22,7 +22,7 @@ mode_t perm = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 	fdf = open(av[1], O_RDONLY);
 	if (fdf <= -1)
 		_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
-	fdt = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, perm);
+	fdt = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
 	if (fdt <= -1)
 		_msgerr(STDERR_FILENO, "Error: Can't write to %s\n", av[2], 99);
 
@@ -30,9 +30,9 @@ mode_t perm = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 		qty = read(fdf, buffer, BUFFER_SIZE);
 		if (qty <= -1)
 			_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
-		if (write(fdt, buffer, qty) != qty)
+		if (write(fdt, buffer, qty) == -1)
 			_msgerr(STDERR_FILENO, "Error: Can't write to %s\n", av[2], 99);
-	} while (qty > 0);
+	} while (qty == BUFFER_SIZE);
 
 	if (close(fdt) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdt), exit(100);
