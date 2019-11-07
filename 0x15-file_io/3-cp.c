@@ -17,24 +17,21 @@ ssize_t qty;		/* Quantity to read and write */
 char buffer[1024];	/* The buffer */
 
 	if (ac != 3)
-	{
-		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28);
-		exit(97);
-	}
+		_msgerr(STDERR_FILENO, "Usage: cp file_from file_to\n", "\n", 97);
 	fdf = open(av[1], O_RDONLY);
 	if (fdf <= -1)
-		_msgerr(STDERR_FILENO, "Error: Can't read from file ", av[1], 98);
+		_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
 	fdt = open(av[2], O_CREAT | O_WRONLY | O_TRUNC,
 					 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fdt <= -1)
-		_msgerr(STDERR_FILENO, "Error: Can't write to ", av[2], 99);
+		_msgerr(STDERR_FILENO, "Error: Can't write to %s\n", av[2], 99);
 
 	do {
 		qty = read(fdf, buffer, 1024);
 		if (qty <= -1)
-			_msgerr(STDERR_FILENO, "Error: Can't read from file ", av[1], 98);
+			_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
 		if (write(fdt, buffer, qty) != qty)
-			_msgerr(STDERR_FILENO, "Error: Can't write to ", av[2], 99);
+			_msgerr(STDERR_FILENO, "Error: Can't write to %s\n", av[2], 99);
 	} while (qty != 0);
 
 	if (close(fdt) == -1)
@@ -62,8 +59,6 @@ char buffer[1024];	/* The buffer */
  */
 void _msgerr(int fd, char *s1, char *s2, int code)
 {
-	write(fd, s1, strlen(s1));
-	write(fd, s2, strlen(s2));
-	write(fd, "\n", 1);
+	dprintf(fd, s1, s2),
 	exit(code);
 }
