@@ -17,7 +17,7 @@ ssize_t qty;		/* Quantity to read and write */
 char buffer[1024];	/* The buffer */
 
 	if (ac != 3)
-		_msgerr(STDERR_FILENO, "Usage: cp file_from file_to\n", "\n", 97);
+		_msgerr(STDERR_FILENO, "Usage: cp file_from file_to%s", "\n", 97);
 	fdf = open(av[1], O_RDONLY);
 	if (fdf <= -1)
 		_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
