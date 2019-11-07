@@ -32,7 +32,7 @@ mode_t perm = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 			_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
 		if (write(fdt, buffer, qty) != qty)
 			_msgerr(STDERR_FILENO, "Error: Can't write to %s\n", av[2], 99);
-	} while (qty != 0);
+	} while (qty > 0);
 
 	if (close(fdt) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdt), exit(100);
