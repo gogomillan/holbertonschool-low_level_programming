@@ -21,10 +21,10 @@ char buffer[1024];	/* The buffer */
 		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28);
 		exit(97);
 	}
-	fdf = open(av[1], O_RDWR);
+	fdf = open(av[1], O_RDONLY);
 	if (fdf <= -1)
 		_msgerr(STDERR_FILENO, "Error: Can't read from file ", av[1], 98);
-	fdt = open(av[2], O_CREAT | O_RDWR | O_TRUNC,
+	fdt = open(av[2], O_CREAT | O_WRONLY | O_TRUNC,
 					 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fdt <= -1)
 		_msgerr(STDERR_FILENO, "Error: Can't write to ", av[2], 99);
