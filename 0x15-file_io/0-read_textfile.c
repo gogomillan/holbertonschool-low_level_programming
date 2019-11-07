@@ -23,7 +23,7 @@ ssize_t qty, c = 0;	/* Quantity readed */
 
 	do {
 		qty = read(fd, &buf, 1);
-		letters += qty;
+		letters -= qty;
 		c += qty;
 		write(1, &buf, qty);
 	} while (letters > 0 && qty > 0);
