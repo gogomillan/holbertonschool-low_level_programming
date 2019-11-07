@@ -14,7 +14,7 @@ int main(int ac, char **av)
 {
 int fdf, fdt;		/* File Descriptor from and to */
 ssize_t qty;		/* Quantity to read and write */
-char buffer[1024];	/* The buffer */
+char buffer[BUFFER_SIZE];	/* The buffer */
 
 	if (ac != 3)
 		_msgerr(STDERR_FILENO, "Usage: cp file_from file_to%s", "\n", 97);
@@ -27,7 +27,7 @@ char buffer[1024];	/* The buffer */
 		_msgerr(STDERR_FILENO, "Error: Can't write to %s\n", av[2], 99);
 
 	do {
-		qty = read(fdf, buffer, 1024);
+		qty = read(fdf, buffer, BUFFER_SIZE);
 		if (qty <= -1)
 			_msgerr(STDERR_FILENO, "Error: Can't read from file %s\n", av[1], 98);
 		if (write(fdt, buffer, qty) != qty)
