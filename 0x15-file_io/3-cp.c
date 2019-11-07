@@ -27,14 +27,14 @@ char buffer[1024];	/* The buffer */
 	fdt = open(av[2], O_CREAT | O_WRONLY | O_TRUNC,
 					 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fdt <= -1)
-		_msgerr(STDERR_FILENO, "Error: Can't write to ", av[2], 99);
+		_msgerr(STDERR_FILENO, "Error: Can't write to file ", av[2], 99);
 
 	do {
 		qty = read(fdf, buffer, 1024);
 		if (qty <= -1)
 			_msgerr(STDERR_FILENO, "Error: Can't read from file ", av[1], 98);
 		if (write(fdt, buffer, qty) != qty)
-			_msgerr(STDERR_FILENO, "Error: Can't write to ", av[2], 99);
+			_msgerr(STDERR_FILENO, "Error: Can't write to file ", av[2], 99);
 	} while (qty != 0);
 
 	if (close(fdt) == -1)
