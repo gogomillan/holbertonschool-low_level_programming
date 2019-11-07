@@ -34,7 +34,7 @@ char buffer[1024];	/* The buffer */
 		if (qty <= -1)
 			_msgerr(STDERR_FILENO, "Error: Can't read from file ", av[1], 98);
 		if (write(fdt, buffer, qty) != qty)
-			_msgerr(STDERR_FILENO, "Error: Can't write to file ", av[2], 99);
+			_msgerr(STDERR_FILENO, "Error: Can't write to ", av[2], 99);
 	} while (qty != 0);
 
 	if (close(fdt) == -1)
