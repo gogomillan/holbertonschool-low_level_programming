@@ -43,9 +43,9 @@ unsigned int qty = 0;
 	if (idx == qty)
 	{	new->next = current, new->prev = current->prev;
 		current->prev->next = new, current->prev = new;
+		return (new);
 	}
-	else
-		new->prev = current, current->next = new;
-
-	return (new);
+	/* else */
+		/* new->prev = current, current->next = new; */
+	return (NULL);
 }
