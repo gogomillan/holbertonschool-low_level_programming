@@ -22,14 +22,12 @@ unsigned int qty = 0;
 	{	*h = new;
 		return (new);
 	}
-
 	current = (dlistint_t *)*h;
 	if (idx == 0)
 	{	new->next = current, new->prev = current->prev, current->prev = new;
 		*h = new;
 		return (new);
 	}
-
 	while (current->next != NULL)
 	{
 		if (idx == qty)
@@ -45,7 +43,10 @@ unsigned int qty = 0;
 		current->prev->next = new, current->prev = new;
 		return (new);
 	}
-	/* else */
-		/* new->prev = current, current->next = new; */
+	else if (idx == (qty + 1))
+	{
+		new->prev = current, current->next = new;
+		return (new);
+	}
 	return (NULL);
 }
