@@ -23,7 +23,17 @@ hash_node_t *head = NULL, *node = NULL;
 	if (node == NULL)
 		return (0);
 	node->key = strdup(key);
+	if (node->key == NULL)
+	{
+		free(node);
+		return (0);
+	}
 	node->value = strdup(value);
+	if (node->value == NULL)
+	{
+		free(node);
+		return (0);
+	}
 	node->next = NULL;
 
 	if (ht->array[index] == NULL)
