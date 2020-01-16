@@ -12,9 +12,6 @@ hash_table_t *head = NULL;
 hash_node_t **node = NULL;
 unsigned long int i;
 
-	if (size <= 0)
-		return (NULL);
-
 	head = malloc(sizeof(hash_table_t));
 	if (head == NULL)
 		return (NULL);
