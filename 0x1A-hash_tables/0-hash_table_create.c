@@ -15,7 +15,7 @@ unsigned long int i;
 	head = malloc(sizeof(hash_table_t));
 	if (head == NULL)
 		return (NULL);
-	node = malloc((size + 1) * sizeof(hash_node_t));
+	node = malloc(size  * sizeof(hash_node_t *));
 	if (node == NULL)
 	{
 		free(head);
