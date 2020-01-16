@@ -32,9 +32,9 @@ hash_node_t *head = NULL, *node = NULL;
 		return (1);
 	}
 	head = ht->array[index];
-	while (head->next != NULL)
-		head = head->next;
-	head->next = node;
+	head->next = NULL;
+	node->next = head;
+	ht->array[index] = node;
 
 	return (1);
 }
