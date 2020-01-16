@@ -10,41 +10,42 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-unsigned long int index;
-hash_node_t *head = NULL, *node = NULL;
+	unsigned long int idx = 0;
+	char *temp_val = NULL;
+	hash_node_t *temp = NULL;
+	hash_node_t *new = NULL;
 
 	if (ht == NULL || ht->array == NULL || value == NULL)
 		return (0);
-	if (key == NULL || strlen(key) == 0)
-		return (0);
 
-	index = key_index((unsigned char *)key, ht->size);
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
+	if (strlen(key) == 0 || key == NULL)
 		return (0);
-	node->key = strdup(key);
-	if (node->key == NULL)
+	temp_val = strdup(value);
+	if (temp_val == NULL)
+		return (0);
+	idx = key_index((unsigned char *)key, ht->size);
+
+	/* Collision checker */
+	temp = ht->array[idx];
+	while (temp)
 	{
-		free(node);
+		if (strcmp(temp->key, key) == 0)
+		{
+			free(temp->value), temp->value = temp_val, temp->value = strdup(value);
+			free(temp_val);
+			return (1);
+		}
+		temp = temp->next;
+	}
+
+	/* If no collision, insert node */
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+	{
+		free(new);
 		return (0);
 	}
-	node->value = strdup(value);
-	if (node->value == NULL)
-	{
-		free(node);
-		return (0);
-	}
-	node->next = NULL;
-
-	if (ht->array[index] == NULL)
-	{
-		ht->array[index] = node;
-		return (1);
-	}
-	head = ht->array[index];
-	head->next = NULL;
-	node->next = head;
-	ht->array[index] = node;
-
+	new->key = strdup(key), new->value = temp_val, new->next = ht->array[idx];
+	ht->array[idx] = new;
 	return (1);
 }
