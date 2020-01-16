@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - check the code for Holberton School students.
+ * hash_table_set - function that adds an element to the hash table.
  * @ht: pointer to the hash table
  * @key: The key for the hash table
  * @value: The value for the hash table
@@ -14,7 +14,9 @@ unsigned long int index;
 unsigned long int hash_table_array_size;
 hash_node_t *head = NULL, *node = NULL;
 
-	if (ht == NULL || key == NULL || value == NULL)
+	if (ht == NULL || ht->array == NULL || value == NULL)
+		return (0);
+	if (key == NULL || strlen(key) == 0)
 		return (0);
 
 	hash_table_array_size = 1024;
