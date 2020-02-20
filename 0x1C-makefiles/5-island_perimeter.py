@@ -15,39 +15,19 @@ def island_perimeter(grid):
     Return:
         Return the perimeter of the island.
     """
+    per = 0
+    length = len(grid) - 1
+    width = len(grid[0]) - 1
 
-    """ per is the array with de details for sum """
-    per = list()
-    for i in range(len(grid)):
-        per.append([0 for x in range(len(grid[0]))])
-
-    """ First take into account the line boundaries """
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 1:
-                if j == 0:
-                    per[i][j] += 1
-                elif j == (len(grid[i])-1) and grid[i][j-1] == 0:
-                    per[i][j] += 2
-                elif grid[i][j-1] == 0:
-                    per[i][j] += 1
-            elif grid[i][j] == 0:
-                if j != 0:
-                    if grid[i][j-1] == 1:
-                        per[i][j-1] += 1
-
-    """ Second take into account the columns boundaries """
-    for j in range(len(grid[0])):
-        for i in range(len(grid)):
-            if grid[i][j] == 1:
-                if i == 0:
-                    per[i][j] += 1
-                elif grid[i-1][j] == 0:
-                    per[i][j] += 1
-            elif grid[i][j] == 0:
-                if i != 0:
-                    if grid[i-1][j] == 1:
-                        per[i-1][j] += 1
-
-    """ Finally sum the sums of each line of per list of lists """
-    return sum([sum(x) for x in per])
+    for i, r in enumerate(grid):
+        for j, n in enumerate(r):
+            if n == 1:
+                if i == 0 or grid[i - 1][j] != 1:
+                    per += 1
+                if j == 0 or grid[i][j - 1] != 1:
+                    per += 1
+                if j == width or grid[i][j + 1] != 1:
+                    per += 1
+                if i == length or grid[i + 1][j] != 1:
+                    per += 1
+    return per
