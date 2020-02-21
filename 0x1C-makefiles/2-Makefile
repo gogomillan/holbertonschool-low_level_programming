@@ -1,0 +1,11 @@
+# first useful Makefile
+
+CC=gcc
+SRC=holberton.c main.c
+OBJ=$(SRC:.c=.o)
+NAME=holberton
+
+all: $(SRC) $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $@
